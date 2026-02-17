@@ -312,36 +312,8 @@ function About() {
 
 // ─── Route Section ───────────────────────────────────────────────
 function Route() {
-  const waypoints = [
-    {
-      km: "0",
-      name: "Start — Hauganes Village",
-      desc: "Begin at the harbour, heading north along the coast road.",
-    },
-    {
-      km: "10",
-      name: "Hjalteyri Approach",
-      desc: "Flat coastal stretch with views across the fjord to Akureyri.",
-    },
-    {
-      km: "21",
-      name: "Turnaround — Hjalteyri",
-      desc: "Halfway point at the historic herring factory. Aid station and timing mat.",
-    },
-    {
-      km: "30",
-      name: "Return Coastal Path",
-      desc: "Heading south back towards Hauganes with the mountains at your back.",
-    },
-    {
-      km: "42.195",
-      name: "Finish — Hauganes Harbour",
-      desc: "Cross the finish line at the harbour to cheering crowds and celebration.",
-    },
-  ];
-
   return (
-    <section id="route" className="py-24 sm:py-32 bg-slate-950 text-white">
+    <section id="route" className="pt-16 pb-20 bg-slate-950 text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <p className="text-sm font-semibold uppercase tracking-widest text-sky-400 mb-3">
@@ -355,77 +327,12 @@ function Route() {
             Flat terrain, ocean breeze, and mountain panoramas the entire way.
           </p>
         </div>
-
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Route Map Image */}
-          <div className="relative rounded-2xl overflow-hidden">
-            <img
-              src="/images/route.jpg"
-              alt="Aerial view of Icelandic coastal road"
-              className="w-full h-[500px] object-cover rounded-2xl"
-            />
-            <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6">
-              <div className="flex items-center gap-3 text-white/90">
-                <MountainIcon className="h-5 w-5 text-sky-400" />
-                <span className="text-sm">
-                  Elevation: Virtually flat — max 20m above sea level
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Waypoints */}
-          <div className="space-y-1">
-            {waypoints.map((wp, i) => (
-              <div key={wp.km} className="flex gap-4">
-                {/* Timeline */}
-                <div className="flex flex-col items-center">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sky-500 text-xs font-bold text-white shrink-0">
-                    {wp.km}
-                  </div>
-                  {i < waypoints.length - 1 && (
-                    <div className="w-px flex-1 bg-white/20 my-1" />
-                  )}
-                </div>
-                {/* Content */}
-                <div className="pb-8">
-                  <h3 className="font-semibold text-white">{wp.name}</h3>
-                  <p className="text-sm text-white/50 mt-1">{wp.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Route highlights */}
-        <div className="grid sm:grid-cols-3 gap-6 mt-16">
-          {[
-            {
-              icon: <MapPinIcon className="h-6 w-6" />,
-              title: "Flat & Fast",
-              desc: "Minimal elevation change makes this an ideal course for personal bests.",
-            },
-            {
-              icon: <MountainIcon className="h-6 w-6" />,
-              title: "Scenic Views",
-              desc: "Snow-capped peaks, calm fjord waters, and potential whale sightings.",
-            },
-            {
-              icon: <ClockIcon className="h-6 w-6" />,
-              title: "7-Hour Cutoff",
-              desc: "Generous time limit welcoming runners of all abilities.",
-            },
-          ].map((item) => (
-            <div
-              key={item.title}
-              className="rounded-2xl bg-white/5 border border-white/10 p-6"
-            >
-              <div className="text-sky-400 mb-3">{item.icon}</div>
-              <h3 className="font-semibold text-white mb-1">{item.title}</h3>
-              <p className="text-sm text-white/50">{item.desc}</p>
-            </div>
-          ))}
+        <div className="flex justify-center">
+        <iframe
+          height="600"
+          style={{ width: '100%', maxWidth: 900 }}
+          src={`http://localhost:3000/runs/N4zQOJc8HpKLfxz3KgvS`}
+        />
         </div>
       </div>
     </section>
