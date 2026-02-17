@@ -331,7 +331,7 @@ function Route() {
         <iframe
           height="600"
           style={{ width: '100%', maxWidth: 900 }}
-          src={`${import.meta.env.VITE_SPRETTA_BASE_URL}/runs/${import.meta.env.VITE_SPRETTA_RUN_ID}`}
+          src={`${import.meta.env.VITE_SPRETTA_BASE_URL}/route/${import.meta.env.VITE_SPRETTA_RUN_ID}`}
         />
         </div>
       </div>
