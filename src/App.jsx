@@ -330,7 +330,7 @@ function Route() {
         <div className="flex justify-center">
         <iframe
           height="600"
-          style={{ width: '100%', maxWidth: 900 }}
+          style={{ width: '100%', maxWidth: 900, outline: 'none' }}
           src={`${import.meta.env.VITE_SPRETTA_BASE_URL}/public-runs/${import.meta.env.VITE_SPRETTA_RUN_SLUG}`}
         />
         </div>
